@@ -46,6 +46,12 @@ public float liikuntaNopeus;//movespeed
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
+        if(liikuntaNopeus == 0){
+            anim.SetBool("isrRunning", false);
+        }else{
+            anim.SetBool("isRunning", true);
+        }
+
         if(Input.GetKey(left))
         {
             RigitysBodi.velocity = new Vector2(-liikuntaNopeus, RigitysBodi.velocity.y);
